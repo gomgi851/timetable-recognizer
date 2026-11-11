@@ -1,0 +1,20 @@
+{
+  "name": "timetable-recognizer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5180",
+    "build": "vite build",
+    "test": "node --test test/*.test.js",
+    "evaluate": "node scripts/evaluate.mjs",
+    "setup:models": "node scripts/setup-models.mjs"
+  },
+  "dependencies": {
+    "tesseract.js": "6.0.1"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "^0.1.80",
+    "vite": "^8.0.0"
+  }
+}

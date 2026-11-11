@@ -1,0 +1,24 @@
+{
+  "environment": "Desktop Chrome; OffscreenCanvas and Tesseract Web Workers; same-origin local model files",
+  "sample": "1, 13 courses",
+  "observedRun": {
+    "recognitionMs": 5979,
+    "totalMs": 6193.100000023842,
+    "initMs": 198.5
+  },
+  "sameWorkerRepeatObservedBeforeUIEditFix": {
+    "recognitionMs": 5986,
+    "totalMs": 5997.700000047684
+  },
+  "checks": {
+    "ocrCompleted": true,
+    "manualRoomEditExported": true,
+    "exportedCourseCount": 13
+  },
+  "limits": [
+    "Not an internet cold-download benchmark",
+    "Mobile and peak memory not measured",
+    "Native file chooser automation blocked by extension file access; tested with local development sample selector instead",
+    "Download event automation timed out, but the downloaded JSON contents were inspected directly"
+  ]
+}

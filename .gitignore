@@ -5,3 +5,9 @@ dist/
 !.env.example
 samples/private/
 models/
+
+public/models/
+public/ocr/
+*.traineddata
+
+/scripts/inspect.mjs

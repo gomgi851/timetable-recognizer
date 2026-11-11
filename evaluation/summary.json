@@ -1,0 +1,135 @@
+{
+  "method": "Manual visual transcription of supplied screenshots. Whitespace ignored for names; room code only, not full building description. Unknown/cropped/ambiguous fields are null and excluded per field. Not held-out data.",
+  "timeToleranceMinutes": 5,
+  "matching": "Greedy one-to-one, same weekday and start time within 45 min; unknown start matched by normalized name containment. Missing predictions count as incorrect. Name whitespace and case ignored; room code only.",
+  "samples": [
+    {
+      "id": "1",
+      "sha256": "b154a5548d77c6536adf9c6e37603c0b80b587e4b5ffbee2fb0bff33561b2cb7",
+      "expected": 13,
+      "predicted": 13,
+      "matched": 13,
+      "elapsedMs": 6520.608700000001
+    },
+    {
+      "id": "2",
+      "sha256": "9268fa42befaa8b08bec12128efecff7fc0f8d22079c17a7bd971b87ce5da1e4",
+      "expected": 11,
+      "predicted": 11,
+      "matched": 11,
+      "elapsedMs": 5858.7183
+    },
+    {
+      "id": "3",
+      "sha256": "8071d94e5a0c87b742f385761b044edf03afb0a7edeef304bf5135be7869296f",
+      "expected": 10,
+      "predicted": 10,
+      "matched": 10,
+      "elapsedMs": 4710.005799999999
+    },
+    {
+      "id": "4",
+      "sha256": "dd338c44f366c4de59c32949954dfae48829f3ff3b29eb96f66dc5ae3dcc4d33",
+      "expected": 10,
+      "predicted": 10,
+      "matched": 10,
+      "elapsedMs": 3327.0725999999995
+    },
+    {
+      "id": "5",
+      "sha256": "0ee1985056e7935ea20e8b9d9b0ba8ccad50eed0d1ae73abf099ab077c5b58fd",
+      "expected": 14,
+      "predicted": 14,
+      "matched": 14,
+      "elapsedMs": 4208.391
+    },
+    {
+      "id": "6",
+      "sha256": "b5f9345bc5efb72b40bd32872011cf2d7c8f112430b30ea8ce4fdef9fc4a298c",
+      "expected": 10,
+      "predicted": 10,
+      "matched": 10,
+      "elapsedMs": 4416.550199999998
+    },
+    {
+      "id": "7",
+      "sha256": "90ac99b42be1e93d61809c0d94a748ce3e435bc32d54a4f684b1f99e3f0cc894",
+      "expected": 12,
+      "predicted": 12,
+      "matched": 12,
+      "elapsedMs": 6263.0062
+    },
+    {
+      "id": "8",
+      "sha256": "c93dc0332f4ec738d65e5df3215473043f215dabbf61314efc9a5f72028ac279",
+      "expected": 12,
+      "predicted": 12,
+      "matched": 12,
+      "elapsedMs": 6006.203200000004
+    }
+  ],
+  "metrics": {
+    "name": {
+      "correct": 82,
+      "total": 92,
+      "excluded": 0,
+      "accuracy": 0.8913043478260869
+    },
+    "roomCode": {
+      "correct": 50,
+      "total": 91,
+      "excluded": 1,
+      "accuracy": 0.5494505494505495
+    },
+    "day": {
+      "correct": 92,
+      "total": 92,
+      "excluded": 0,
+      "accuracy": 1
+    },
+    "startMinutes": {
+      "correct": 91,
+      "total": 91,
+      "excluded": 1,
+      "accuracy": 1
+    },
+    "endMinutes": {
+      "correct": 88,
+      "total": 88,
+      "excluded": 4,
+      "accuracy": 1
+    }
+  },
+  "expected": 92,
+  "predicted": 92,
+  "matched": 92,
+  "fullyCorrect": 45,
+  "fullyScorable": 88,
+  "roomCodePresentOnly": {
+    "correct": 42,
+    "total": 83,
+    "accuracy": 0.5060240963855421
+  },
+  "limitations": [
+    "Development-set evaluation, not held-out or general accuracy.",
+    "Ground truth transcribed visually by one annotator; no independent second annotation.",
+    "Time values inferred visually from grid; ±5 minute tolerance, not exact-to-minute ground truth.",
+    "Weekday is part of matching and is not an independent weekday classification benchmark.",
+    "Full classroom/building descriptions were not scored; room code only.",
+    "One obscured room, one uncertain start and four uncertain/obscured ends excluded per field.",
+    "Duplicate screenshots removed by SHA-256.",
+    "Mobile browser speed and peak memory have not been measured."
+  ],
+  "detectionRecall": 1,
+  "detectionPrecision": 1,
+  "fullAccuracy": 0.5113636363636364,
+  "speed": {
+    "environment": "Node v24.14.0; same WASM recognition code as browser, not a mobile/browser speed measurement",
+    "count": 8,
+    "minSeconds": 3.3270725999999997,
+    "medianSeconds": 5.8587183000000005,
+    "maxSeconds": 6.5206087,
+    "meanSeconds": 5.163819500000001,
+    "excludes": "Model loading, page loading, image decoding; includes geometry and OCR."
+  }
+}
