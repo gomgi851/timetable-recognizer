@@ -1,0 +1,286 @@
+{
+  "modelSha256": "8398d455255f3cb728e819152118594e956eaed092cc21cc77ad4770fb375b53",
+  "trainingPerformed": false,
+  "parserOrRoiRulesChanged": false,
+  "timeToleranceMinutes": 5,
+  "roomInferenceCpuMsAll": 403.22370000649244,
+  "note": "Image 1 is new to previous inputs. Image 2 repeats previous evaluation content with minor pixel differences; report separately. Unknown room/end excluded, and untimed subjects tracked separately.",
+  "images": [
+    {
+      "id": "new-1",
+      "input": {
+        "id": "new-1",
+        "sha256": "3a3af9f477b665d31b6b5b3bdb30be224720657cdd4c6a92e0e4d3663d6ad107",
+        "pixelSha256": "39e76461999a77b06f718f193f695cf70d4a47baf8eb4bb523213806f31ec429",
+        "size": [
+          1179,
+          2556
+        ],
+        "priorMatches": []
+      },
+      "expectedBlocks": 11,
+      "predictedBlocks": 11,
+      "matchedBlocks": 11,
+      "spuriousBlocks": 0,
+      "baselineMs": 6432.5144,
+      "metrics": {
+        "tesseract": {
+          "name": {
+            "correct": 9,
+            "total": 11,
+            "excluded": 0,
+            "accuracy": 0.8181818181818182
+          },
+          "roomCode": {
+            "correct": 1,
+            "total": 10,
+            "excluded": 1,
+            "accuracy": 0.1
+          },
+          "novelRoomCode": {
+            "correct": 1,
+            "total": 8,
+            "excluded": 3,
+            "accuracy": 0.125
+          },
+          "startMinutes": {
+            "correct": 11,
+            "total": 11,
+            "excluded": 0,
+            "accuracy": 1.0
+          },
+          "endMinutes": {
+            "correct": 10,
+            "total": 10,
+            "excluded": 1,
+            "accuracy": 1.0
+          },
+          "allFields": {
+            "correct": 0,
+            "total": 10,
+            "excluded": 1,
+            "accuracy": 0.0
+          }
+        },
+        "before": {
+          "name": {
+            "correct": 9,
+            "total": 11,
+            "excluded": 0,
+            "accuracy": 0.8181818181818182
+          },
+          "roomCode": {
+            "correct": 6,
+            "total": 10,
+            "excluded": 1,
+            "accuracy": 0.6
+          },
+          "novelRoomCode": {
+            "correct": 6,
+            "total": 8,
+            "excluded": 3,
+            "accuracy": 0.75
+          },
+          "startMinutes": {
+            "correct": 11,
+            "total": 11,
+            "excluded": 0,
+            "accuracy": 1.0
+          },
+          "endMinutes": {
+            "correct": 10,
+            "total": 10,
+            "excluded": 1,
+            "accuracy": 1.0
+          },
+          "allFields": {
+            "correct": 5,
+            "total": 10,
+            "excluded": 1,
+            "accuracy": 0.5
+          }
+        },
+        "after": {
+          "name": {
+            "correct": 9,
+            "total": 11,
+            "excluded": 0,
+            "accuracy": 0.8181818181818182
+          },
+          "roomCode": {
+            "correct": 8,
+            "total": 10,
+            "excluded": 1,
+            "accuracy": 0.8
+          },
+          "novelRoomCode": {
+            "correct": 6,
+            "total": 8,
+            "excluded": 3,
+            "accuracy": 0.75
+          },
+          "startMinutes": {
+            "correct": 11,
+            "total": 11,
+            "excluded": 0,
+            "accuracy": 1.0
+          },
+          "endMinutes": {
+            "correct": 10,
+            "total": 10,
+            "excluded": 1,
+            "accuracy": 1.0
+          },
+          "allFields": {
+            "correct": 7,
+            "total": 10,
+            "excluded": 1,
+            "accuracy": 0.7
+          }
+        }
+      },
+      "untimedSubjectCountNotHandled": 1
+    },
+    {
+      "id": "new-2",
+      "input": {
+        "id": "new-2",
+        "sha256": "8b780d5a5c72f77bd8c972098f85e221cd8181c79982f3f02e72b48d6dbe0f02",
+        "pixelSha256": "604fa673c823ae6134a4323b0498eb12198b557ed2a3dbaf739730347cc3c37a",
+        "size": [
+          1179,
+          2556
+        ],
+        "priorMatches": [
+          {
+            "priorImage": "7",
+            "pixelExact": false,
+            "meanAbsolutePixelDifference": 0.3156657565472627
+          }
+        ]
+      },
+      "expectedBlocks": 12,
+      "predictedBlocks": 12,
+      "matchedBlocks": 12,
+      "spuriousBlocks": 0,
+      "baselineMs": 7370.4845000000005,
+      "metrics": {
+        "tesseract": {
+          "name": {
+            "correct": 12,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 1.0
+          },
+          "roomCode": {
+            "correct": 3,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 0.25
+          },
+          "novelRoomCode": {
+            "correct": 2,
+            "total": 7,
+            "excluded": 5,
+            "accuracy": 0.2857142857142857
+          },
+          "startMinutes": {
+            "correct": 12,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 1.0
+          },
+          "endMinutes": {
+            "correct": 12,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 1.0
+          },
+          "allFields": {
+            "correct": 3,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 0.25
+          }
+        },
+        "before": {
+          "name": {
+            "correct": 12,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 1.0
+          },
+          "roomCode": {
+            "correct": 8,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 0.6666666666666666
+          },
+          "novelRoomCode": {
+            "correct": 7,
+            "total": 7,
+            "excluded": 5,
+            "accuracy": 1.0
+          },
+          "startMinutes": {
+            "correct": 12,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 1.0
+          },
+          "endMinutes": {
+            "correct": 12,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 1.0
+          },
+          "allFields": {
+            "correct": 8,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 0.6666666666666666
+          }
+        },
+        "after": {
+          "name": {
+            "correct": 12,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 1.0
+          },
+          "roomCode": {
+            "correct": 12,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 1.0
+          },
+          "novelRoomCode": {
+            "correct": 7,
+            "total": 7,
+            "excluded": 5,
+            "accuracy": 1.0
+          },
+          "startMinutes": {
+            "correct": 12,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 1.0
+          },
+          "endMinutes": {
+            "correct": 12,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 1.0
+          },
+          "allFields": {
+            "correct": 12,
+            "total": 12,
+            "excluded": 0,
+            "accuracy": 1.0
+          }
+        }
+      },
+      "untimedSubjectCountNotHandled": 0
+    }
+  ]
+}
