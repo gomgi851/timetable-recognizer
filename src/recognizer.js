@@ -50,7 +50,7 @@ export function parseCourse(lines) {
   return {name,room,roomCode,rawText,warnings};
 }
 
-export async function recognizeTimetable(source,{worker,makeCanvas,onProgress=()=>{},startHour=null}) {
+export async function recognizeTimetable(source,{worker,makeCanvas,onProgress=()=>{},startHour=null,roomRecognizer=null}) {
   const started=performance.now();
   const geometry=detectGeometry(source.getContext('2d').getImageData(0,0,source.width,source.height));
   onProgress({stage:'시간 눈금 인식',progress:0});
@@ -68,6 +68,7 @@ export async function recognizeTimetable(source,{worker,makeCanvas,onProgress=()
     const crop=textCrop(source,{...b,x:b.x+3,y:b.y+3,width:b.width-6,height:b.height-6},makeCanvas,b.color,2);
     const lines=await recognizeLines(crop,worker,makeCanvas);
     const parsed=parseCourse(lines);
+    if(roomRecognizer)Object.assign(parsed,await roomRecognizer({crop,lines,parsed,worker,makeCanvas}));
     const endY=b.y+b.height;
     const outerX=Math.max(1,Math.round(source.width*.005));
     const endPixels=source.getContext('2d').getImageData(outerX,Math.min(source.height-11,Math.max(0,endY-5)),1,11).data;

@@ -13,28 +13,31 @@ npm run dev
 
 브라우저에서 http://127.0.0.1:5180/ 을 엽니다. 다른 PC에서는 모델 다운로드에 인터넷이 필요합니다.
 설치 스크립트는 공식 tessdata_best 저장소에서 한국어·영어 사전학습 모델을 받습니다.
-모델 합계는 27,928,729 bytes(약 27.9 MB)이며 OCR 엔진은 별도입니다.
+한국어·영어 OCR 가중치 약 27.9 MB, 학습한 강의실 ONNX 가중치 약 15.1 MB입니다. 전체 정적 자산은 엔진을 포함해 약 68 MB입니다. 실제 첫 다운로드는 캐시·선택한 OCR 코어에 따라 달라집니다.
 전체 정적 배포 파일은 `npm run build`로 `dist/`에 생성됩니다.
 **Python OCR 서버나 API 키는 필요하지 않습니다.** 모델 및 OCR 엔진 파일은 같은 사이트에서 제공합니다.
 사용자가 선택한 사진은 브라우저 Worker에서 처리하며 인식 서버로 전송하는 코드는 없습니다.
 
 ## 기능
 
-- PNG/JPG/WEBP 선택 및 드래그 앤 드롭
+- PNG/JPG/WEBP 파일 선택
 - 수업 칸 검출, 한국어·영어 OCR, 과목명과 강의실 코드 분리
 - 월~금 좌표와 시간 눈금을 이용한 시작·종료 시각 추정(5분 단위)
 - 시간 축 자동 인식 실패 시 첫 시간 직접 선택
 - 원본의 수업 칸 표시, OCR 원문 및 수정 가능한 결과표
-- 수업 삭제, 수정 결과 JSON 다운로드, 인식 취소
+- 수정 결과 JSON 다운로드, 인식 취소
+- 학습한 강의실 코드 AI를 ONNX Runtime Web 1.22.0 WASM CPU로 실행
+- 클릭부터 결과 표시까지 전체 시간, 모델 초기화, OCR 포함 추출 시간, 강의실 AI 시간, 세션 실행 기록 표시
+- 격자 밖 시간 미지정 사이버강의(예: 하단 수치해석)는 제외
 - 별도 Worker에서 이미지 처리, Tesseract Worker 재사용 및 모델 캐시
 
-현재 브라우저 UI는 Tesseract.js 6.0.1과 기존 사전학습 LSTM 가중치를 사용합니다. 별도로 만든 GPU 추가 학습 모델과 구분됩니다.
+브라우저 UI는 Tesseract.js 6.0.1로 과목명·강의실 원문과 시간 눈금을 읽고, GPU로 추가 학습한 room-code-v2 모델로 강의실 코드를 읽습니다. 표에서 OCR 코드와 AI 코드를 비교할 수 있습니다. 강의실 영역을 찾지 못한 경우 OCR 값을 유지하며 표시합니다. 모델은 별도 Web Worker 안에서 CPU로 실행됩니다.
 부동소수점 모델을 시험할 때 7.0.0에서 코어 오류가 발생해 6.0.1로 고정했습니다.
 격자, 색상 영역, 행 분할, 텍스트 필드, 시간 변환은 직접 작성한 코드입니다.
 
 ## GPU 추가 학습 결과
 
-강의실 코드 모델을 RTX 2070에서 추가 학습했습니다. 같은 모델이 학습에 쓰지 않은 평가 사진 2장·24개 코드에서 **17/24 (70.8%) → 23/24 (95.8%)**로 개선됐습니다. 과목명·시간 OCR은 변경하지 않았으며 기존 브라우저 UI에는 새 모델을 아직 연결하지 않았습니다. 모델·분할·과적합 방지·한계는 [training/README.md](training/README.md)를 참고하세요.
+강의실 코드 모델을 RTX 2070에서 추가 학습했습니다. 같은 모델이 학습에 쓰지 않은 평가 사진 2장·24개 코드에서 **17/24 (70.8%) → 23/24 (95.8%)**로 개선됐습니다. 과목명·시간 OCR은 변경하지 않았으며 브라우저 UI에도 새 모델을 연결했습니다. 모델·분할·과적합 방지·한계는 [training/README.md](training/README.md)를 참고하세요.
 
 ## 기존 Tesseract 기준 정확도
 
@@ -96,6 +99,21 @@ npm run evaluate
 
 - [Tesseract.js](https://github.com/naptha/tesseract.js) — Apache-2.0
 - [tessdata_best](https://github.com/tesseract-ocr/tessdata_best) — Apache-2.0
-- [ONNX Runtime Web](https://onnxruntime.ai/docs/tutorials/web/) — 대안 검토 자료
+- [ONNX Runtime Web](https://onnxruntime.ai/docs/tutorials/web/) — MIT, 브라우저 내 강의실 추론
 
 `model-assets.json`에 사용한 모델·런타임 파일의 크기와 SHA-256을 기록했습니다.
+
+## 브라우저 전처리 주의
+
+강의실 영역 추출·CTC 규칙·가중치는 고정했습니다. 브라우저 이미지 축소는 Canvas high-quality 보간을 사용하므로 Python/Pillow bicubic과 픽셀 단위 동일성을 보장하지 않습니다. 기존 Python 정확도 수치를 브라우저 정확도라고 간주하지 마세요. 이 UI 작업에서는 추가 학습하지 않았습니다.
+
+## 간단한 정보 추출 테스트 사이트
+
+https://timetable-ocr-lab-yoong.yoonaa1381.chatgpt.site (소유자 전용, ChatGPT 로그인)
+
+PC Chrome / 로컬 정적 자산 / 기존 OCR 캐시에서 1179×2556 이미지 실측:
+- 11개 수업: 모델 초기화 포함 8.787초, 동일 사진 모델 재사용 7.188초
+- 12개 수업: 모델 초기화 포함 9.709초
+- 강의실 AI 전처리·추론: 각각 1.141초, 1.121초, 1.280초 (전체 시간에 포함)
+
+이는 인터넷 최초 다운로드나 모바일 벤치마크가 아닙니다. 본인 기기에서 이미지 선택 후 정보 추출을 눌러 확인하세요. 사진 원본과 전체 OCR 결과는 공개 집계에 포함하지 않았습니다. 상세 집계: evaluation/browser-room-model-check.json.

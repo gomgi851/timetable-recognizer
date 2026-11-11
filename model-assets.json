@@ -13,6 +13,16 @@
       "sha256": "f888d4038348a0c3d25151e7f452bda0d74ca275b18cab146798bcbb94084fff"
     },
     {
+      "file": "public/models/room-code-v2.json",
+      "bytes": 1498,
+      "sha256": "26f3827a6c9dc36223cb7a9aa44a2d3194f2a7347ccd537403381673873c68c9"
+    },
+    {
+      "file": "public/models/room-code-v2.onnx",
+      "bytes": 15143302,
+      "sha256": "8398d455255f3cb728e819152118594e956eaed092cc21cc77ad4770fb375b53"
+    },
+    {
       "file": "public/ocr/tesseract-core-lstm.wasm",
       "bytes": 2871085,
       "sha256": "220e2e87551edccb85519796a170469f8ab2a8055216789e3b8b1ada18b7bc2b"
@@ -36,6 +46,16 @@
       "file": "public/ocr/worker.min.js",
       "bytes": 111162,
       "sha256": "38645599043239c0eb6db08a6504a92dcdc292200535f3e9339cd77c4443b842"
+    },
+    {
+      "file": "public/runtime/ort-wasm-simd-threaded.mjs",
+      "bytes": 20856,
+      "sha256": "30dd851d9c00622940500f71ddd2ff8820c5cb65270816080175b958705385a8"
+    },
+    {
+      "file": "public/runtime/ort-wasm-simd-threaded.wasm",
+      "bytes": 11210254,
+      "sha256": "71aef04959c5c1b6de461b6538e2058e306610034a85aad2742d0c7fd4533fe4"
     }
   ]
 }

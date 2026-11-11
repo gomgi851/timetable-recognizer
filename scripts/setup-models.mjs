@@ -2,6 +2,10 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 await fs.mkdir('public/models',{recursive:true});await fs.mkdir('public/ocr',{recursive:true});
+await fs.mkdir('public/runtime',{recursive:true});await fs.mkdir('public/licenses',{recursive:true});
+for(const name of ['room-code-v2.onnx','room-code-v2.json'])await fs.copyFile(`trained/${name}`,`public/models/${name}`);
+for(const name of ['ort-wasm-simd-threaded.wasm','ort-wasm-simd-threaded.mjs'])await fs.copyFile(`node_modules/onnxruntime-web/dist/${name}`,`public/runtime/${name}`);
+const ortLicense=await fetch('https://raw.githubusercontent.com/microsoft/onnxruntime/v1.22.0/LICENSE');if(!ortLicense.ok)throw new Error('ONNX license download failed');await fs.writeFile('public/licenses/ONNX-Runtime-LICENSE.txt',await ortLicense.text());
 for(const lang of ['kor','eng']) {
  const dest=`public/models/${lang}.traineddata`;
  try{await fs.access(dest);}catch{
@@ -14,7 +18,7 @@ for(const lang of ['kor','eng']) {
 await fs.copyFile('node_modules/tesseract.js/dist/worker.min.js','public/ocr/worker.min.js');
 for(const name of ['tesseract-core-relaxedsimd-lstm.wasm','tesseract-core-relaxedsimd-lstm.wasm.js'])await fs.rm(path.join('public/ocr',name),{force:true});
 for(const name of await fs.readdir('node_modules/tesseract.js-core'))if(/-lstm\.wasm(\.js)?$/.test(name))await fs.copyFile(path.join('node_modules/tesseract.js-core',name),path.join('public/ocr',name));
-const assets=[];for(const dir of ['public/models','public/ocr'])for(const name of await fs.readdir(dir)){const b=await fs.readFile(path.join(dir,name));assets.push({file:`${dir}/${name}`,bytes:b.length,sha256:createHash('sha256').update(b).digest('hex')});}
+const assets=[];for(const dir of ['public/models','public/ocr','public/runtime'])for(const name of await fs.readdir(dir)){const b=await fs.readFile(path.join(dir,name));assets.push({file:`${dir}/${name}`,bytes:b.length,sha256:createHash('sha256').update(b).digest('hex')});}
 await fs.mkdir('public/licenses',{recursive:true});
 await fs.copyFile('node_modules/tesseract.js/LICENSE.md','public/licenses/Tesseract.js-APACHE-2.0.txt');
 const licenseResponse=await fetch('https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/main/LICENSE');
@@ -23,3 +27,4 @@ await fs.writeFile('public/licenses/tessdata_best-APACHE-2.0.txt',await licenseR
 await fs.writeFile('public/licenses/NOTICE.txt','OCR: Tesseract.js (https://github.com/naptha/tesseract.js), Tesseract.js-core and Tesseract OCR. Models: tessdata_best (https://github.com/tesseract-ocr/tessdata_best). These components are distributed under the Apache License 2.0; see accompanying license files.');
 await fs.writeFile('model-assets.json',JSON.stringify({source:'https://github.com/tesseract-ocr/tessdata_best',license:'Apache-2.0',assets},null,2)+'\n');
 console.log(JSON.stringify(assets.map(({file,bytes})=>({file,bytes}))));
+

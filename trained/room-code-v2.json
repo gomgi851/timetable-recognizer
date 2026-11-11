@@ -35,6 +35,6 @@
       "cer": 0.011363636363636364
     }
   },
-  "deploymentStatus": "Export validated with ONNX Runtime CPU. Browser and mobile inference have not yet been wired or benchmarked. Existing browser UI still uses the original baseline.",
+  "deploymentStatus": "Integrated in browser UI with onnxruntime-web 1.22.0 WASM CPU, single-thread inside Web Worker. Canvas resize differs from Pillow; Python parity is not browser parity.",
   "license": "Based on EasyOCR pretrained english_g2, Apache-2.0; see training/README.md"
 }
