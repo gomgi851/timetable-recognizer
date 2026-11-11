@@ -27,4 +27,3 @@ await fs.writeFile('public/licenses/tessdata_best-APACHE-2.0.txt',await licenseR
 await fs.writeFile('public/licenses/NOTICE.txt','OCR: Tesseract.js (https://github.com/naptha/tesseract.js), Tesseract.js-core and Tesseract OCR. Models: tessdata_best (https://github.com/tesseract-ocr/tessdata_best). These components are distributed under the Apache License 2.0; see accompanying license files.');
 await fs.writeFile('model-assets.json',JSON.stringify({source:'https://github.com/tesseract-ocr/tessdata_best',license:'Apache-2.0',assets},null,2)+'\n');
 console.log(JSON.stringify(assets.map(({file,bytes})=>({file,bytes}))));
-
