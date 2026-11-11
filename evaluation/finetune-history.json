@@ -1,0 +1,474 @@
+[
+  {
+    "epoch": 0,
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 0.00013937332460045582
+    }
+  },
+  {
+    "epoch": 1,
+    "loss": 0.20299342435100698,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 0.0001303510998695856
+    },
+    "elapsedSeconds": 1.3620544000295922,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 2,
+    "loss": 0.07015935709159749,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 0.00010637434752425179
+    },
+    "elapsedSeconds": 2.6804193999851122,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 3,
+    "loss": 0.013283021729876054,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 8.88089025465888e-05
+    },
+    "elapsedSeconds": 3.8891122000059113,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 4,
+    "loss": 0.003582056955110602,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 8.233776588895125e-05
+    },
+    "elapsedSeconds": 5.073537299991585,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 5,
+    "loss": 0.0019138087907322188,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 8.282853559649084e-05
+    },
+    "elapsedSeconds": 6.261074100038968,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 6,
+    "loss": 0.0005341341678786193,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 8.20883215055801e-05
+    },
+    "elapsedSeconds": 7.46324359998107,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 7,
+    "loss": 0.0014943275947416623,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 7.951132556627272e-05
+    },
+    "elapsedSeconds": 8.646364000043832,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 8,
+    "loss": 0.0004936034854381433,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 7.94807947386289e-05
+    },
+    "elapsedSeconds": 9.84396110009402,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 9,
+    "loss": 0.0006036716098378747,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 7.857564469304634e-05
+    },
+    "elapsedSeconds": 11.151305100065656,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 10,
+    "loss": 0.00021199200165256116,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 7.728931723249843e-05
+    },
+    "elapsedSeconds": 12.471097500063479,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 11,
+    "loss": 0.0002871714891625743,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 7.708758585067699e-05
+    },
+    "elapsedSeconds": 13.743628800031729,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 12,
+    "loss": 0.00028961820407857886,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 7.665754992558504e-05
+    },
+    "elapsedSeconds": 14.957824400044046,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 13,
+    "loss": 0.00010865707264429147,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 7.691578730373294e-05
+    },
+    "elapsedSeconds": 16.13592420006171,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 14,
+    "loss": 0.00019581433878101961,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 7.637203725607833e-05
+    },
+    "elapsedSeconds": 17.309549600002356,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 15,
+    "loss": 0.00012977593678442645,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 7.616806396981701e-05
+    },
+    "elapsedSeconds": 18.49807900004089,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 16,
+    "loss": 0.00022314821620739167,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 7.902078095867182e-05
+    },
+    "elapsedSeconds": 19.862975700059906,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 17,
+    "loss": 0.00010157173477409742,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 8.199453031920712e-05
+    },
+    "elapsedSeconds": 21.108695200062357,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 18,
+    "loss": 0.0001490683803808679,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 8.203781999327475e-05
+    },
+    "elapsedSeconds": 22.323388000018895,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 19,
+    "loss": 0.00014057573361014875,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 8.232069785663043e-05
+    },
+    "elapsedSeconds": 23.54095639998559,
+    "maxGpuAllocatedBytes": 165659136
+  },
+  {
+    "epoch": 20,
+    "loss": 7.894980575429145e-05,
+    "train": {
+      "correct": 32,
+      "total": 32,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 126,
+      "cer": 0.0
+    },
+    "validation": {
+      "correct": 9,
+      "total": 9,
+      "accuracy": 1.0,
+      "characterEdits": 0,
+      "characters": 70,
+      "cer": 0.0,
+      "ctcLoss": 8.383757904084632e-05
+    },
+    "elapsedSeconds": 24.831979100010358,
+    "maxGpuAllocatedBytes": 165659136
+  }
+]

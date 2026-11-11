@@ -1,0 +1,47 @@
+{
+  "experiment": "room-code-finetune-v2-audited",
+  "seed": 20261111,
+  "trainImages": [
+    "1",
+    "2",
+    "4",
+    "5",
+    "6"
+  ],
+  "validationImages": [
+    "3"
+  ],
+  "testImages": [
+    "7",
+    "8"
+  ],
+  "scope": "Fine-tune a small pretrained English/alphanumeric visual recognizer for room codes only. Course OCR and timetable geometry remain frozen.",
+  "dataPolicy": "Only supplied screenshot pixels and their manual labels are used for fine-tuning. No new external training images, text generation or room dictionary. Pretrained public weights are permitted.",
+  "grouping": "Screenshots of related timetables 1/2 and 4/5 stay in train; related 7/8 stay together in test. Exact screenshot duplicates were removed. Exact ROI duplicates are audited across splits and deduplicated within train.",
+  "limitations": "All eight screenshots were previously inspected and used in baseline parser development. This is a held-out fine-tuning experiment, not a fully unseen product benchmark. Very small validation/test source count.",
+  "model": "EasyOCR english_g2 VGG-BiLSTM-CTC; pretrained character inventory unchanged",
+  "freeze": "FeatureExtraction and first SequenceModeling layer",
+  "optimizer": "AdamW",
+  "learningRate": 3e-05,
+  "weightDecay": 0.01,
+  "batchSize": 8,
+  "maxEpochs": 25,
+  "patience": 5,
+  "augmentationRepeats": 8,
+  "selection": "Highest validation exact-code accuracy, then lowest CER, then lowest validation CTC loss; epoch zero eligible. No test-based selection.",
+  "primaryMetric": "Exact room-code match on all test records with a visible non-empty room code; missing/failed ROI remains incorrect",
+  "secondaryMetrics": [
+    "character error rate",
+    "all-fields timetable accuracy with room-code substitution"
+  ],
+  "comparison": [
+    "frozen Tesseract baseline",
+    "same room-code model before fine-tuning",
+    "same room-code model after validation-selected fine-tuning"
+  ],
+  "trainingQualityExcludedIds": [
+    "6-0",
+    "6-1"
+  ],
+  "protocolRevision": "Before test evaluation: removed two visually audited wrong training crops; added validation loss tie-breaker because validation accuracy/CER were saturated at epoch zero. Initial invalid run archived locally."
+}

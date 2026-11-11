@@ -1,0 +1,129 @@
+{
+  "experiment": "room-code-finetune-v2-audited",
+  "scope": "Room-code recognizer only; course/geometry/axis unchanged. Same automatically extracted inputs for pretrained vs fine-tuned weights.",
+  "split": {
+    "trainImages": [
+      "1",
+      "2",
+      "4",
+      "5",
+      "6"
+    ],
+    "validationImages": [
+      "3"
+    ],
+    "testImages": [
+      "7",
+      "8"
+    ],
+    "trainingUniqueCrops": 32,
+    "validationRecords": 9,
+    "testRecords": 24,
+    "testNovelCodeRecords": 18,
+    "testDistinctCodes": 11
+  },
+  "selectedEpoch": 15,
+  "lastEpoch": 20,
+  "metrics": {
+    "tesseractBaseline": {
+      "correct": 8,
+      "total": 24,
+      "accuracy": 0.3333333333333333,
+      "characterEdits": 16,
+      "characters": 88,
+      "cer": 0.18181818181818182
+    },
+    "sameModelBeforeTraining": {
+      "correct": 17,
+      "total": 24,
+      "accuracy": 0.7083333333333334,
+      "characterEdits": 10,
+      "characters": 88,
+      "cer": 0.11363636363636363
+    },
+    "validationSelectedAfterTraining": {
+      "correct": 23,
+      "total": 24,
+      "accuracy": 0.9583333333333334,
+      "characterEdits": 1,
+      "characters": 88,
+      "cer": 0.011363636363636364
+    }
+  },
+  "novelCodeMetrics": {
+    "tesseractBaseline": {
+      "correct": 8,
+      "total": 18,
+      "accuracy": 0.4444444444444444,
+      "characterEdits": 10,
+      "characters": 64,
+      "cer": 0.15625
+    },
+    "sameModelBeforeTraining": {
+      "correct": 16,
+      "total": 18,
+      "accuracy": 0.8888888888888888,
+      "characterEdits": 3,
+      "characters": 64,
+      "cer": 0.046875
+    },
+    "validationSelectedAfterTraining": {
+      "correct": 17,
+      "total": 18,
+      "accuracy": 0.9444444444444444,
+      "characterEdits": 1,
+      "characters": 64,
+      "cer": 0.015625
+    }
+  },
+  "speedGpuMs": {
+    "before": 236.34850000962615,
+    "after": 52.4299000389874,
+    "note": "Model loading and crop/Tesseract time excluded; GPU kernels may include first-run initialization. Not a browser benchmark."
+  },
+  "training": {
+    "selectedEpoch": 15,
+    "lastEpoch": 20,
+    "selectedBy": "validation exact accuracy, CER, then CTC loss; no test access",
+    "seconds": 24.83336769999005,
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "checkpointSha256": "be660af03fe10ce197ebbe9d959295110e221cbdef82bc8a911e446603315442",
+    "protocolSha256": "cf406cc9321ebac4fde659318778ec87a65e0d10a5cf10713b273d475c4798fe"
+  },
+  "limitations": [
+    "Only two final-test screenshots, correlated courses; not a generalization guarantee.",
+    "All supplied images were previously visible during baseline program development. Held out only from this fine-tuning/model-selection run.",
+    "Validation is a single screenshot with nine codes.",
+    "English model is public pretrained; only new fine-tuning pixels/labels come from supplied screenshots.",
+    "Removing duplicate crops and augmenting training only does not create more independent data.",
+    "Exact-code accuracy, not full classroom description accuracy."
+  ],
+  "endToEndOnTest": {
+    "tesseractBaseline": {
+      "nameCorrect": 18,
+      "roomCorrect": 8,
+      "roomTotal": 24,
+      "allCorrect": 7,
+      "allTotal": 24,
+      "total": 24
+    },
+    "sameModelBeforeTraining": {
+      "nameCorrect": 18,
+      "roomCorrect": 17,
+      "roomTotal": 24,
+      "allCorrect": 13,
+      "allTotal": 24,
+      "total": 24
+    },
+    "validationSelectedAfterTraining": {
+      "nameCorrect": 18,
+      "roomCorrect": 23,
+      "roomTotal": 24,
+      "allCorrect": 18,
+      "allTotal": 24,
+      "total": 24
+    }
+  }
+}

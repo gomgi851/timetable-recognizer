@@ -1,0 +1,40 @@
+{
+  "model": "EasyOCR english_g2, fine-tuned last BiLSTM/linear layers on supplied screenshot room crops",
+  "parameters": 3781345,
+  "input": {
+    "name": "image",
+    "shape": [
+      1,
+      1,
+      64,
+      320
+    ],
+    "dtype": "float32",
+    "normalization": "grayscale / 127.5 - 1; preserve aspect, white/right pad, image padded by 4 pixels before resize"
+  },
+  "output": {
+    "name": "logits",
+    "ctcBlank": 0,
+    "characters": "0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ €ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
+    "decode": "greedy CTC; ASCII alphanumeric and hyphen only, uppercase result; no room dictionary"
+  },
+  "bytes": 15143302,
+  "sha256": "8398d455255f3cb728e819152118594e956eaed092cc21cc77ad4770fb375b53",
+  "selectedEpoch": 15,
+  "protocolSha256": "cf406cc9321ebac4fde659318778ec87a65e0d10a5cf10713b273d475c4798fe",
+  "onnxCpuParity": {
+    "matchingPredictions": 24,
+    "total": 24,
+    "maxAbsLogitError": 4.38690185546875e-05,
+    "score": {
+      "correct": 23,
+      "total": 24,
+      "accuracy": 0.9583333333333334,
+      "characterEdits": 1,
+      "characters": 88,
+      "cer": 0.011363636363636364
+    }
+  },
+  "deploymentStatus": "Export validated with ONNX Runtime CPU. Browser and mobile inference have not yet been wired or benchmarked. Existing browser UI still uses the original baseline.",
+  "license": "Based on EasyOCR pretrained english_g2, Apache-2.0; see training/README.md"
+}

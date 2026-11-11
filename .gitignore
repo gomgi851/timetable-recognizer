@@ -11,3 +11,9 @@ public/ocr/
 *.traineddata
 
 /scripts/inspect.mjs
+.venv-train/
+training/private/
+training/vendor/
+training/__pycache__/
+
+training/*.log
